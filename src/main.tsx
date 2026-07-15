@@ -1,5 +1,6 @@
 import { flushSync } from 'react-dom';
 import { createRoot } from 'react-dom/client';
+import skHynixLogoUrl from './assets/sk-hynix-logo.png';
 import './style.css';
 
 function BattlefieldApp() {
@@ -7,14 +8,9 @@ function BattlefieldApp() {
     <>
       <header className="topbar">
         <a className="brand" href="#" aria-label="SKHYNIX 订单簿战场首页" data-i18n-aria="brand_home">
-          <span className="brand-mark" aria-hidden="true">
-            <i />
-            <i />
-            <i />
-            <b>SKHX</b>
-          </span>
-          <span>
-            <strong>SKHYNIX <em>BATTLEFIELD</em></strong>
+          <img className="brand-logo" src={skHynixLogoUrl} alt="SK hynix" />
+          <span className="brand-copy">
+            <strong>BATTLEFIELD</strong>
             <small>HYPERLIQUID · xyz:SKHX</small>
           </span>
         </a>
