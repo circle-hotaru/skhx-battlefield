@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { trackEvent } from './analytics';
 import './style.css';
 
 const MARKET = {
@@ -1051,6 +1052,7 @@ el('reset-camera').addEventListener('click', () => {
   camera.position.copy(defaultCamera);
   controls.target.set(0, 0, 1);
   controls.update();
+  trackEvent('reset_camera');
 });
 
 const soundToggle = el('sound-toggle');
@@ -1088,6 +1090,7 @@ if (soundSupported) {
     soundBlocked = false;
     button.setAttribute('aria-pressed', String(soundOn));
     refreshSoundToggle();
+    trackEvent('toggle_sound', { enabled: soundOn });
   });
 }
 
@@ -1111,6 +1114,7 @@ function applyLanguage(language) {
 el('language-toggle').addEventListener('click', () => {
   const currentIndex = languageOrder.indexOf(currentLanguage);
   applyLanguage(languageOrder[(currentIndex + 1) % languageOrder.length]);
+  trackEvent('change_language', { language: currentLanguage });
 });
 
 el('data-toggle').addEventListener('click', () => {
@@ -1118,6 +1122,7 @@ el('data-toggle').addEventListener('click', () => {
   badge.animate([{ transform: 'translateX(0)' }, { transform: 'translateX(-3px)' }, { transform: 'translateX(3px)' }, { transform: 'translateX(0)' }], { duration: 240 });
   el('market-label').textContent = t('status_manual_reconnect');
   marketData.reconnect();
+  trackEvent('reconnect_market_data');
 });
 
 const resizeObserver = new ResizeObserver(() => {
