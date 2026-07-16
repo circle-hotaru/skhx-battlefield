@@ -1,10 +1,7 @@
 import { flushSync } from 'react-dom';
 import { createRoot } from 'react-dom/client';
 import skHynixLogoUrl from './assets/sk-hynix-logo.png';
-import { initAnalytics } from './analytics';
 import './style.css';
-
-initAnalytics();
 
 function BattlefieldApp() {
   return (
