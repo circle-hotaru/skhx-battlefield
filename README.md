@@ -28,19 +28,7 @@ pnpm preview
 
 ## Google Analytics
 
-项目通过 GA4 Measurement ID 统计页面访问和核心交互。生产构建会自动启用统计，本地开发默认关闭，避免开发流量污染报表。
-
-如需在本地验证或为特定部署覆盖 Measurement ID，可复制环境变量示例：
-
-```bash
-cp .env.example .env.local
-```
-
-```dotenv
-VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
-```
-
-启用后会自动记录 `page_view`，并记录重置视角、音效开关、语言切换和行情重连事件。环境变量的值优先于代码中的生产 Measurement ID。
+项目使用 GA4 Measurement ID `G-1VTZZ3JJY4` 统计页面访问和核心交互。页面加载后会自动记录 `page_view`，并记录重置视角、音效开关、语言切换和行情重连事件。
 
 ## 实时数据接入
 

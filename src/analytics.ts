@@ -1,4 +1,4 @@
-const measurementId = import.meta.env.VITE_GA_MEASUREMENT_ID?.trim()
+const measurementId = 'G-1VTZZ3JJY4'
 
 type GtagCommand = 'config' | 'event' | 'js'
 type GtagParameters = Record<string, string | number | boolean | undefined>
